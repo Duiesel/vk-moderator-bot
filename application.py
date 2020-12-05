@@ -4,8 +4,7 @@ from aiohttp import web
 
 
 async def hello(request):
-    """
-    """
+    """Test request handler."""
     return web.Response(text="Hello, world")
 
 
