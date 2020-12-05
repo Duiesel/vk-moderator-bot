@@ -1,5 +1,16 @@
-def test():
-    pass
+import os
+
+from aiohttp import web
+
+
+async def hello(request):
+    """
+    """
+    return web.Response(text="Hello, world")
+
 
 if __name__ == '__main__':
-    test()
+    PORT = os.getenv('PORT')
+    app = web.Application()
+    app.add_routes([web.get('/', hello)])
+    web.run_app(app, port=PORT)
