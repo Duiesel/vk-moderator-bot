@@ -9,7 +9,7 @@ async def hello(request):
 
 
 if __name__ == '__main__':
-    PORT = os.getenv('PORT')
+    port = int(os.environ.get('PORT', 80))
     app = web.Application()
     app.add_routes([web.get('/', hello)])
-    web.run_app(app, port=PORT)
+    web.run_app(app, port=port)
